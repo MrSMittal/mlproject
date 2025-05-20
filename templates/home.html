@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Data Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded shadow">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Student Performance Form</h2>
+    <form class="space-y-4" action="{{ url_for('preditct_datapoint')}}" method="post">
+
+      <!-- Gender -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="gender">Gender</label>
+        <select id="gender" name="gender" class="w-full border-gray-300 rounded px-3 py-2">
+          <option value="">Select Gender</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </div>
+
+      <!-- Race/Ethnicity -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="race">Race/Ethnicity</label>
+        <select id="race" name="race_ethnicity" class="w-full border-gray-300 rounded px-3 py-2">
+          <option value="">Select Race/Ethnicity</option>
+          <option value="group A">Group A</option>
+          <option value="group B">Group B</option>
+          <option value="group C">Group C</option>
+          <option value="group D">Group D</option>
+          <option value="group E">Group E</option>
+        </select>
+      </div>
+
+      <!-- Parental Level of Education -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="parental_level_of_education">Parental Level of Education</label>
+        <select id="education" name="parental_level_of_education" class="w-full border-gray-300 rounded px-3 py-2">
+          <option value="">Select Education Level</option>
+          <option value="high school">High School</option>
+          <option value="some high school">Some High School</option>
+          <option value="associate's degree">Associate's Degree</option>
+          <option value="bachelor's degree">Bachelor's Degree</option>
+          <option value="master's degree">Master's Degree</option>
+          <option value="some college">Some College</option>
+        </select>
+      </div>
+
+      <!-- Lunch -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="lunch">Lunch</label>
+        <select id="lunch" name="lunch" class="w-full border-gray-300 rounded px-3 py-2">
+          <option value="">Select Lunch Type</option>
+          <option value="standard">Standard</option>
+          <option value="free/reduced">Free/Reduced</option>
+        </select>
+      </div>
+
+      <!-- Test Preparation Course -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="test_preparation_course">Test Preparation Course</label>
+        <select id="test-prep" name="test_preparation_course" class="w-full border-gray-300 rounded px-3 py-2">
+          <option value="">Select Course Status</option>
+          <option value="none">None</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <!-- Reading Score -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="reading_score">Reading Score</label>
+        <input type="number" id="reading-score" name="reading_score" min="0" max="100" class="w-full border-gray-300 rounded px-3 py-2">
+      </div>
+
+      <!-- Writing Score -->
+      <div>
+        <label class="block text-gray-700 mb-1" for="writing-score">Writing Score</label>
+        <input type="number" id="writing-score" name="writing_score" min="0" max="100" class="w-full border-gray-300 rounded px-3 py-2">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+      </div>
+    </form>
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">
+      the prediction is {{results}}
+    </h2>
+  </div>
+ 
+</body>
+</html>
